@@ -38,7 +38,7 @@
             <sql:param>${param.slot3}</sql:param>
         </sql:update>
     </c:when>
-    <c:when test="${not empty param.slot0 and not empty param.slot1 and not empty param.slot2 and not empty param.slot3 and not empty param.slot4}">
+    <c:when test="${not empty param.slot0 and not empty param.slot1 and not empty param.slot2 and not empty param.slot3 and not empty param.slot4 and empty param.slot5}">
         <sql:update dataSource="jdbc/serviceMapper">
             insert into ctsa_services.facet(hub,slot0,slot1,slot2,slot3,slot4) values(?,?,?,?,?,?);
             <sql:param>${param.hub}</sql:param>
@@ -49,6 +49,18 @@
             <sql:param>${param.slot4}</sql:param>
         </sql:update>
     </c:when>
+    <c:when test="${not empty param.slot0 and not empty param.slot1 and not empty param.slot2 and not empty param.slot3 and not empty param.slot4 and not empty param.slot5}">
+        <sql:update dataSource="jdbc/serviceMapper">
+            insert into ctsa_services.facet(hub,slot0,slot1,slot2,slot3,slot4,slot5) values(?,?,?,?,?,?,?);
+            <sql:param>${param.hub}</sql:param>
+            <sql:param>${param.slot0}</sql:param>
+            <sql:param>${param.slot1}</sql:param>
+            <sql:param>${param.slot2}</sql:param>
+            <sql:param>${param.slot3}</sql:param>
+            <sql:param>${param.slot4}</sql:param>
+            <sql:param>${param.slot5}</sql:param>
+        </sql:update>
+    </c:when>
 </c:choose>
 
-<c:redirect url="taxonomy.jsp?hub=${param.hub}" />
+<c:redirect url="taxonomy_edit.jsp?hub=${param.hub}" />
