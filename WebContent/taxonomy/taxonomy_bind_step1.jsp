@@ -17,9 +17,9 @@
 	<div id="content"><jsp:include page="/header.jsp" flush="true" />
 		<jsp:include page="/menu.jsp" flush="true"><jsp:param
 				name="caller" value="research" /></jsp:include><div id="centerCol">
-			<h3>Service Taxonomy for ${param.hub} [<a href="taxonomy_edit.jsp?hub=${param.hub}">edit</a>] [<a href="taxonomy_bind_step1.jsp?hub=${param.hub}">bind</a>]</h3>
-
- 			<jsp:include page="node.jsp" flush="true">
+			<h3>Service Taxonomy for ${param.hub}</h3>
+            <p>Select ${param.hub} taxonomy node to bind to.</p>
+			<jsp:include page="node_step1.jsp" flush="true">
 			 <jsp:param value="${param.hub}" name="hub"/>
 			</jsp:include>
 

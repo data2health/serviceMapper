@@ -361,6 +361,9 @@ a:hover {
 .bulletedList li ul {
     list-style-image: none;
 }
+.bulletedSubList {
+    list-style-type: square;
+}
 
 .left {
     float: left;

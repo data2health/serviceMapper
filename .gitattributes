@@ -21,10 +21,17 @@ WebContent/node.jsp -text
 WebContent/resources/d3.v4.min.js -text
 WebContent/resources/style.css -text
 WebContent/taxonomy/node.jsp -text
+WebContent/taxonomy/node_bindings.jsp -text
 WebContent/taxonomy/node_delete.jsp -text
 WebContent/taxonomy/node_edit.jsp -text
+WebContent/taxonomy/node_step1.jsp -text
+WebContent/taxonomy/node_step2.jsp -text
 WebContent/taxonomy/node_submit.jsp -text
 WebContent/taxonomy/taxonomy.jsp -text
+WebContent/taxonomy/taxonomy_bind.jsp -text
+WebContent/taxonomy/taxonomy_bind_step1.jsp -text
+WebContent/taxonomy/taxonomy_bind_step2.jsp -text
 WebContent/taxonomy/taxonomy_edit.jsp -text
+WebContent/taxonomy/taxonomy_suppress.jsp -text
 non-packaged-resources/schema.sql -text
 /pom.xml -text
