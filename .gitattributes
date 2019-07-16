@@ -31,7 +31,9 @@ WebContent/taxonomy/taxonomy.jsp -text
 WebContent/taxonomy/taxonomy_bind.jsp -text
 WebContent/taxonomy/taxonomy_bind_step1.jsp -text
 WebContent/taxonomy/taxonomy_bind_step2.jsp -text
+WebContent/taxonomy/taxonomy_create.jsp -text
 WebContent/taxonomy/taxonomy_edit.jsp -text
+WebContent/taxonomy/taxonomy_submit.jsp -text
 WebContent/taxonomy/taxonomy_suppress.jsp -text
 non-packaged-resources/schema.sql -text
 /pom.xml -text
