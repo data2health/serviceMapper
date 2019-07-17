@@ -17,7 +17,7 @@
 		<jsp:include page="/menu.jsp" flush="true"><jsp:param
 				name="caller" value="research" /></jsp:include>
 		<div id="centerCol">
-			Initial deployment of an app supporting creation of a taxonomy of services provided by CTSA hubs.
+			Initial deployment of an app supporting creation of one or more taxonomies of services provided by CTSA hubs.
 
 			<div id="contentBlock">
 				<div id="contentBlock2">
