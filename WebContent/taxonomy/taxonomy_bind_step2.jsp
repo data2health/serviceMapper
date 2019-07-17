@@ -33,7 +33,7 @@
             select hub from ctsa_services.facet
             where not exists (select hub_fid from ctsa_services.binding,ctsa_services.facet as foo where foo.hub=facet.hub and cd2h_fid=?::int and foo.fid=binding.hub_fid)
             and not exists (select hub from ctsa_services.binding_suppression where cd2h_fid=?::int and facet.hub=binding_suppression.hub)
-            and hub != 'CD2H'
+            and not exists (select taxonomy from ctsa_services.taxonomy where taxonomy.taxonomy =  facet.hub)
             limit 1
             <sql:param>${param.fid}</sql:param>
             <sql:param>${param.fid}</sql:param>
