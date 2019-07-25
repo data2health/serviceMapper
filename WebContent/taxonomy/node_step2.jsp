@@ -9,15 +9,17 @@
 			select fid,path,slot0
 			from ctsa_services.facet
 			where hub = ? and slot0 is not null and slot1 is null
-			and not exists (select hub_fid from ctsa_services.binding where hub_fid=fid)
+			and not exists (select hub_fid from ctsa_services.binding, ctsa_services.facet as foo where hub_fid=facet.fid and cd2h_fid = foo.fid and foo.hub = ?)
 			order by 3;
 			<sql:param>${param.hub}</sql:param>
+            <sql:param>${param.cd2h_hub}</sql:param>
 		</sql:query>
 		<ol class="bulletedList">
 		<c:forEach items="${slot0s.rows}" var="row" varStatus="rowCounter">
 				<li><input type="checkbox" name="hfid" value="${row.fid}">${row.slot0}</input>
 				<jsp:include page="node_step2.jsp" flush="true">
 					<jsp:param name="hub" value="${param.hub}" />
+                    <jsp:param name="cd2h_hub" value="${param.cd2h_hub}" />
                     <jsp:param name="slot0" value="${row.slot0}" />
 				</jsp:include>
 				</li>
@@ -29,16 +31,18 @@
 			select fid,path,slot1
 			from ctsa_services.facet
 			where hub = ? and slot0=? and slot1 is not null and slot2 is null
-            and not exists (select hub_fid from ctsa_services.binding where hub_fid=fid)
+            and not exists (select hub_fid from ctsa_services.binding, ctsa_services.facet as foo where hub_fid=facet.fid and cd2h_fid = foo.fid and foo.hub = ?)
 			order by 3;
             <sql:param>${param.hub}</sql:param>
 			<sql:param>${param.slot0}</sql:param>
+            <sql:param>${param.cd2h_hub}</sql:param>
 		</sql:query>
 		<ol class="bulletedList">
 		<c:forEach items="${slot1s.rows}" var="row" varStatus="rowCounter">
                 <li><input type="checkbox" name="hfid" value="${row.fid}">${row.slot1}</input>
  				<jsp:include page="node_step2.jsp" flush="true">
                     <jsp:param name="hub" value="${param.hub}" />
+                    <jsp:param name="cd2h_hub" value="${param.cd2h_hub}" />
 					<jsp:param name="slot0" value="${param.slot0}" />
 					<jsp:param name="slot1" value="${row.slot1}" />
 				</jsp:include>
@@ -51,17 +55,19 @@
 			select fid,path,slot2
 			from ctsa_services.facet
 			where hub = ? and slot0=? and slot1=? and slot2 is not null and slot3 is null
-            and not exists (select hub_fid from ctsa_services.binding where hub_fid=fid)
+            and not exists (select hub_fid from ctsa_services.binding, ctsa_services.facet as foo where hub_fid=facet.fid and cd2h_fid = foo.fid and foo.hub = ?)
 			order by 3;
             <sql:param>${param.hub}</sql:param>
 			<sql:param>${param.slot0}</sql:param>
 			<sql:param>${param.slot1}</sql:param>
+            <sql:param>${param.cd2h_hub}</sql:param>
 		</sql:query>
 		<ol class="bulletedList">
 		<c:forEach items="${slot2s.rows}" var="row" varStatus="rowCounter">
                 <li><input type="checkbox" name="hfid" value="${row.fid}">${row.slot2}</input>
                  <jsp:include page="node_step2.jsp" flush="true">
                     <jsp:param name="hub" value="${param.hub}" />
+                    <jsp:param name="cd2h_hub" value="${param.cd2h_hub}" />
                     <jsp:param name="slot0" value="${param.slot0}" />
                     <jsp:param name="slot1" value="${param.slot1}" />
                     <jsp:param name="slot2" value="${row.slot2}" />
@@ -75,18 +81,20 @@
             select fid,path,slot3
             from ctsa_services.facet
             where hub = ? and slot0=? and slot1=? and slot2=? and slot3 is not null and slot4 is null
-            and not exists (select hub_fid from ctsa_services.binding where hub_fid=fid)
+            and not exists (select hub_fid from ctsa_services.binding, ctsa_services.facet as foo where hub_fid=facet.fid and cd2h_fid = foo.fid and foo.hub = ?)
             order by 3;
             <sql:param>${param.hub}</sql:param>
             <sql:param>${param.slot0}</sql:param>
             <sql:param>${param.slot1}</sql:param>
             <sql:param>${param.slot2}</sql:param>
+            <sql:param>${param.cd2h_hub}</sql:param>
         </sql:query>
         <ol class="bulletedList">
         <c:forEach items="${slot3s.rows}" var="row" varStatus="rowCounter">
                 <li><input type="checkbox" name="hfid" value="${row.fid}">${row.slot3}</input>
                 <jsp:include page="node_step2.jsp" flush="true">
                     <jsp:param name="hub" value="${param.hub}" />
+                    <jsp:param name="cd2h_hub" value="${param.cd2h_hub}" />
                     <jsp:param name="slot0" value="${param.slot0}" />
                     <jsp:param name="slot1" value="${param.slot1}" />
                     <jsp:param name="slot2" value="${param.slot2}" />
@@ -101,19 +109,21 @@
             select fid,path,slot4
             from ctsa_services.facet
             where hub = ? and slot0=? and slot1=? and slot2=? and slot3=? and slot4 is not null and slot5 is null
-            and not exists (select hub_fid from ctsa_services.binding where hub_fid=fid)
+            and not exists (select hub_fid from ctsa_services.binding, ctsa_services.facet as foo where hub_fid=facet.fid and cd2h_fid = foo.fid and foo.hub = ?)
             order by 3;
             <sql:param>${param.hub}</sql:param>
             <sql:param>${param.slot0}</sql:param>
             <sql:param>${param.slot1}</sql:param>
             <sql:param>${param.slot2}</sql:param>
             <sql:param>${param.slot3}</sql:param>
+            <sql:param>${param.cd2h_hub}</sql:param>
         </sql:query>
         <ol class="bulletedList">
         <c:forEach items="${slot4s.rows}" var="row" varStatus="rowCounter">
                 <li><input type="checkbox" name="hfid" value="${row.fid}">${row.slot4}</input>
                 <jsp:include page="node_step2.jsp" flush="true">
                     <jsp:param name="hub" value="${param.hub}" />
+                     <jsp:param name="cd2h_hub" value="${param.cd2h_hub}" />
                     <jsp:param name="slot0" value="${param.slot0}" />
                     <jsp:param name="slot1" value="${param.slot1}" />
                     <jsp:param name="slot2" value="${param.slot2}" />
@@ -129,7 +139,7 @@
             select fid,path,slot5
             from ctsa_services.facet
             where hub = ? and slot0=? and slot1=? and slot2=? and slot3=? and slot4=? and slot5 is not null
-            and not exists (select hub_fid from ctsa_services.binding where hub_fid=fid)
+            and not exists (select hub_fid from ctsa_services.binding, ctsa_services.facet as foo where hub_fid=facet.fid and cd2h_fid = foo.fid and foo.hub = ?)
             order by 3;
             <sql:param>${param.hub}</sql:param>
             <sql:param>${param.slot0}</sql:param>
@@ -137,6 +147,7 @@
             <sql:param>${param.slot2}</sql:param>
             <sql:param>${param.slot3}</sql:param>
             <sql:param>${param.slot4}</sql:param>
+            <sql:param>${param.cd2h_hub}</sql:param>
         </sql:query>
         <ol class="bulletedList">
         <c:forEach items="${slot5s.rows}" var="row" varStatus="rowCounter">

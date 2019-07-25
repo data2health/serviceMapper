@@ -14,7 +14,7 @@
 		</sql:query>
 		<ol class="bulletedList">
 		<c:forEach items="${slot0s.rows}" var="row" varStatus="rowCounter">
-				<li><a href="taxonomy_bind_step2.jsp?fid=${row.fid}">${row.slot0}</a>
+				<li><a href="taxonomy_bind_step2.jsp?fid=${row.fid}&hub=${param.hub}">${row.slot0}</a>
 				<jsp:include page="node_step1.jsp" flush="true">
 					<jsp:param name="hub" value="${param.hub}" />
                     <jsp:param name="slot0" value="${row.slot0}" />
@@ -34,7 +34,7 @@
 		</sql:query>
 		<ol class="bulletedList">
 		<c:forEach items="${slot1s.rows}" var="row" varStatus="rowCounter">
-				<li><a href="taxonomy_bind_step2.jsp?fid=${row.fid}">${row.slot1}</a>
+				<li><a href="taxonomy_bind_step2.jsp?fid=${row.fid}&hub=${param.hub}">${row.slot1}</a>
  				<jsp:include page="node_step1.jsp" flush="true">
                     <jsp:param name="hub" value="${param.hub}" />
 					<jsp:param name="slot0" value="${param.slot0}" />
@@ -56,7 +56,7 @@
 		</sql:query>
 		<ol class="bulletedList">
 		<c:forEach items="${slot2s.rows}" var="row" varStatus="rowCounter">
-				<li><a href="taxonomy_bind_step2.jsp?fid=${row.fid}">${row.slot2}</a>
+				<li><a href="taxonomy_bind_step2.jsp?fid=${row.fid}&hub=${param.hub}">${row.slot2}</a>
                  <jsp:include page="node_step1.jsp" flush="true">
                     <jsp:param name="hub" value="${param.hub}" />
                     <jsp:param name="slot0" value="${param.slot0}" />
@@ -80,7 +80,7 @@
         </sql:query>
         <ol class="bulletedList">
         <c:forEach items="${slot3s.rows}" var="row" varStatus="rowCounter">
-                <li><a href="taxonomy_bind_step2.jsp?fid=${row.fid}">${row.slot3}</a>
+                <li><a href="taxonomy_bind_step2.jsp?fid=${row.fid}&hub=${param.hub}">${row.slot3}</a>
                 <jsp:include page="node_step1.jsp" flush="true">
                     <jsp:param name="hub" value="${param.hub}" />
                     <jsp:param name="slot0" value="${param.slot0}" />
@@ -106,7 +106,7 @@
         </sql:query>
         <ol class="bulletedList">
         <c:forEach items="${slot4s.rows}" var="row" varStatus="rowCounter">
-                <li><a href="taxonomy_bind_step2.jsp?fid=${row.fid}">${row.slot4}</a>
+                <li><a href="taxonomy_bind_step2.jsp?fid=${row.fid}&hub=${param.hub}">${row.slot4}</a>
                 <jsp:include page="node_step1.jsp" flush="true">
                     <jsp:param name="hub" value="${param.hub}" />
                     <jsp:param name="slot0" value="${param.slot0}" />
@@ -134,7 +134,7 @@
         </sql:query>
         <ol class="bulletedList">
         <c:forEach items="${slot5s.rows}" var="row" varStatus="rowCounter">
-                <li><a href="taxonomy_bind_step2.jsp?fid=${row.fid}">${row.slot5}</a>
+                <li><a href="taxonomy_bind_step2.jsp?fid=${row.fid}&hub=${param.hub}">${row.slot5}</a>
                 </li>
         </c:forEach>
         </ol>

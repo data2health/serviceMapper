@@ -31,16 +31,18 @@
         <input type="hidden" id="cfid" name="cfid" value="${param.fid}">
         <sql:query var="target" dataSource="jdbc/serviceMapper">
             select hub from ctsa_services.facet
-            where not exists (select hub_fid from ctsa_services.binding,ctsa_services.facet as foo where foo.hub=facet.hub and cd2h_fid=?::int and foo.fid=binding.hub_fid)
+            where not exists (select hub_fid from ctsa_services.binding,ctsa_services.facet as foo where foo.hub=facet.hub and cd2h_fid=?::int and foo.fid=binding.hub_fid and foo.hub = ?)
             and not exists (select hub from ctsa_services.binding_suppression where cd2h_fid=?::int and facet.hub=binding_suppression.hub)
             and not exists (select taxonomy from ctsa_services.taxonomy where taxonomy.taxonomy =  facet.hub)
             limit 1
             <sql:param>${param.fid}</sql:param>
+            <sql:param>${param.hub}</sql:param>
             <sql:param>${param.fid}</sql:param>
         </sql:query>
         <c:forEach items="${target.rows}" var="row" varStatus="rowCounter">
              <h3>CTSA Hub: ${row.hub}. <a href="taxonomy_suppress.jsp?hub=${row.hub}&fid=${param.fid}"><i class="fa fa-times" style="font-size:15px;color:red"></i></a> <input type="submit" value="Bind" /></h3>
             <jsp:include page="node_step2.jsp" flush="true">
+             <jsp:param value="${param.hub}" name="cd2h_hub"/>
              <jsp:param value="${param.fid}" name="fid"/>
              <jsp:param value="${row.hub}" name="hub"/>
             </jsp:include>
